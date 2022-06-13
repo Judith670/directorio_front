@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://clubdecarga.com/wp-content/uploads/2020/09/directorio.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Directorio Digital
+    </a>
+
+      <form class="d-flex">
+        <a class="nav-link " href="buscar" routeLink="buscar" aria-current="page" *ngIf="loggedIn">Buscar</a>
+        <a class="nav-link " href="empresas" routeLink="empresas" aria-current="page" *ngIf="loggedIn">Empresas</a>
+        <a class="nav-link "  href="usuarios" routeLink="usuarios" aria-current="page" *ngIf="loggedIn"  >Usuarios</a>
+        <!-- <a class="nav-link "  href="profile"  routeLink="profile" aria-current="page" *ngIf="loggedIn" >Perfil</a> -->
+<!--
+      <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button> --> -->
+        <a class="nav-link active" routerLink="login" aria-current="page" *ngIf="!loggedIn" >Login</a>
+        <a class="nav-link active" routerLink="registrar" aria-current="page" href="#" *ngIf="!loggedIn">Registro</a>
+        <a class="nav-link active" href="#" (click)="logout($event)" aria-current="page" *ngIf="loggedIn">Logout</a>
+      </form>
+  </div>
+</nav>

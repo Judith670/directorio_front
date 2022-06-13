@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 m-auto mt-4">
+      <div class="form-group">
+        <input type="text" (input)="getEmpresas($event)" class="form-control form-control-lg" placeholder="Busca una empresa">
+      </div>
+
+
+
+      <!-- <div *ngFor="let search of data" >
+        <div class="card card-body mb-1">
+          <h4>{{ search.company_name }}</h4>
+          <small class="text-primary">{{ search.category }}</small>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div *ngFor="let search of data"  class="col-sm mb-4"
+      style="cursor: pointer" >
+        <div  class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ search.company_name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ search.category }}</h6>
+              <p class="card-text">{{ search.description }}</p>
+              <!-- <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

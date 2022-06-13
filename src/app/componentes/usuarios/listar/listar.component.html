@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+      <div class="mb-2">
+        <h4>Lista de usuarios</h4>
+        <!-- <a href="" [routerLink]="'crear'" class="btn btn-sm btn-success px-4 float-end">Nueva usuario</a> -->
+      </div>
+  </div>
+  <div class="card-body">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre completo</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Corre Electronico</th>
+          <th scope="col">Empresa registrada</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of Usuarios; let iControl=index " >
+          <th scope="row">{{ usuario.id }}</th>
+          <td>{{ usuario.name }}</td>
+          <td>{{ usuario.address }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>{{ usuario.company }}</td>
+          <td>
+            <div class="row">
+              <div class="col-md-4 col-xs-6">
+                <a  routerLink="/usuarios/editar/{{ usuario.id }}" class="btn btn-warning btn-sm btn-space m-2">Actualizar</a>
+              </div>
+              <div class="col-md-4 col-xs-6">
+                <button class="btn btn-secondary btn-space btn-sm m-2 " (click)="deleteUsuario(usuario.id,iControl)" >Eliminar</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

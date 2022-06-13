@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+      <div class="mb-2">
+        <a href="" [routerLink]="'crear'" class="btn btn-sm btn-primary px-4 float-end">Nueva empresa</a>
+      </div>
+  </div>
+  <div class="card-body">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre de la empresa</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of Empresas; let iControl=index " >
+          <th scope="row">{{ empresa.id }}</th>
+          <td>{{ empresa.company_name }}</td>
+          <td>{{ empresa.category }}</td>
+          <td>
+            <div class="row">
+              <div class="col-md-2 col-xs-6">
+                <a routerLink="/empresas/editar/{{ empresa.id }}" class="btn btn-warning btn-sm btn-space m-2">Actualizar</a>
+              </div>
+              <div class="col-md-2 col-xs-6">
+                <button class="btn btn-secondary btn-sm btn-space m-2" (click)="deleteEmpresa(empresa.id,iControl)">Eliminar</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+    <div class="mb-2">
+      Actualizar empresa
+      <!-- <a href="" [routerLink]="'crear'" class="btn btn-sm btn-secondary px-4 float-end">Editar</a> -->
+    </div>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="formularioEmpresa" (ngSubmit)="actualizarEmpresa()" >
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text"
+            class="form-control" formControlName="company_name"  name="company_name" id="" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.company_name" >
+              {{ error.company_name }}
+          </div>
+          </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Tipo de empresa</label>
+          <input type="text"
+            class="form-control" formControlName="category" name="category" id="" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.category" >
+              {{ error.category }}
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Telefono</label>
+          <input type="text" class="form-control" formControlName="telephone"  name="telephone" id="" aria-describedby="helpId" >
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <input type="text" class="form-control" formControlName="address"  name="address" id="" aria-describedby="helpId" >
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Colonia</label>
+          <input type="text" class="form-control" formControlName="suburb" name="" id="suburb" aria-describedby="helpId" placeholder="UET 1 ">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <textarea type="text" class="form-control" formControlName="description"  name="description" id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n "></textarea>
+        </div>
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-primary m-2">Actualizar</button>
+          <button type="button" class="btn btn-secondary m-2" onclick="history.back()">Cancelar</button>
+        </div>
+    </form>
+  </div>
+</div>

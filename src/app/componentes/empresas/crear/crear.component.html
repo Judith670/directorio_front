@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-header">
+    <div class="mb-2">
+      Registrar nueva empresa
+      <!-- <a href="" [routerLink]="'crear'" class="btn btn-sm btn-secondary px-4 float-end">Registrar</a> -->
+    </div>
+  </div>
+  <div class="card-body">
+
+    <form (ngSubmit)="enviarDatos()" >
+
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text"
+            class="form-control" [(ngModel)]="form.company_name" name="company_name" id="company_name" aria-describedby="helpId" placeholder="Ingresa el nombre de la empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.company_name" >
+              {{ error.company_name }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Categoria de empresa</label>
+          <input type="text"
+            class="form-control" [(ngModel)]="form.category" name="category" id="category" aria-describedby="helpId" placeholder="Ingresa el tipo de empresa">
+            <div class="alert alert-danger" role="alert"  [hidden]="!error.category" >
+              {{ error.category }}
+            </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Telefono</label>
+          <input type="text" class="form-control"  [(ngModel)]="form.telephone" name="telephone"  id="" aria-describedby="helpId" placeholder=" 09310930120 ">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <input type="text" class="form-control"  [(ngModel)]="form.address" name="address"  id="" aria-describedby="helpId" placeholder="Calle 23 s/n x 03 s/n ">
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Colonia</label>
+          <input type="text" class="form-control"   [(ngModel)]="form.suburb" name="suburb" id="" aria-describedby="helpId" placeholder="UET 1 ">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Descripcion</label>
+          <textarea type="text" class="form-control"   [(ngModel)]="form.description" name="description" id="" aria-describedby="helpId"></textarea>
+        </div>
+
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-success m-2">Registrar</button>
+          <button type="button" class="btn btn-secondary m-2" onclick="history.back()">Cancelar</button>
+        </div>
+
+    </form>
+
+  </div>
+</div>

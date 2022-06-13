@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-header">
+    <div class="mb-2">
+      Actualizar usuario
+      <!-- <a href="" [routerLink]="'crear'" class="btn btn-sm btn-secondary px-4 float-end">Editar</a> -->
+    </div>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="formularioUsuario"  (ngSubmit)="actualizarUsuario()"  >
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text" formControlName="name" name="name" class="form-control" id="name" aria-describedby="helpId" >
+          <div class="alert alert-danger" role="alert"  [hidden]="!error.name" >
+              {{ error.name }}
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre de usuario</label>
+          <input type="text" class="form-control" formControlName="username" name="username" id="" aria-describedby="helpId" >
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="" class="form-label">Correo</label>
+            <input type="text" class="form-control" formControlName="email" name="email" id="" aria-describedby="helpId" >
+              <div class="alert alert-danger" role="alert"  [hidden]="!error.email" >
+                {{ error.email }}
+              </div>
+          </div>
+          <div class="col-6">
+            <label for="" class="form-label">Telefono</label>
+            <input type="text"
+              class="form-control" formControlName="phone" name="phone" id="" aria-describedby="helpId" >
+              <div class="alert alert-danger" role="alert"  [hidden]="!error.phone" >
+                {{ error.phone }}
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="mb-3">
+              <label for="" class="form-label">Direccion</label>
+              <input type="text" formControlName="address" class="form-control" name="" id="" aria-describedby="helpId">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="mb-3">
+              <label for="" class="form-label">Colonia</label>
+              <input type="text" formControlName="suburb" class="form-control" name="" id="" aria-describedby="helpId">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-warning m-2">Actualizar</button>
+          <button type="button" class="btn btn-secondary m-2" onclick="history.back()">Cancelar</button>
+        </div>
+    </form>
+  </div>
+</div>

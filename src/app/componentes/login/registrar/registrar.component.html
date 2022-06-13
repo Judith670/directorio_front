@@ -1,0 +1,83 @@
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+                  <div class="card ">
+                      <div class="card-header">Register</div>
+                      <div class="card-body">
+                          <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+                          <!-- <form #loginForm=ngForm (ngSubmit)="onSubmit()"> -->
+                              <!-- <div class="alert alert-danger" role="alert" [hidden]="!error" >
+                                {{ error }}
+                              </div> -->
+                              <div class="form-group row">
+                                  <label for="name" class="col-md-4 col-form-label text-md-right">Nombre completo</label>
+                                  <div class="col-md-6 mb-2">
+                                      <input type="text" id="name" class="form-control" [(ngModel)]="register.name" name="name" required>
+                                      <div class="alert alert-danger" role="alert"  [hidden]="!error.name" >
+                                        {{ error.name }}
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="email" class="col-md-4 col-form-label text-md-right">Correo electronico</label>
+                                  <div class="col-md-6 mb-2">
+                                      <input type="text" id="email" class="form-control"  [(ngModel)]="register.email" name="email" required>
+                                      <div class="alert alert-danger" role="alert"  [hidden]="!error.email" >
+                                        {{ error.email }}
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
+                                <div class="col-md-6 mb-4">
+                                    <input type="password" id="password" class="form-control"  [(ngModel)]="register.password" name="password"  autocomplete="on" required>
+                                    <div class="alert alert-danger" role="alert"  [hidden]="!error.password" >
+                                      {{ error.password }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">Contraseña</label>
+                              <div class="col-md-6 mb-4">
+                                  <input type="password" id="password_confirmation" class="form-control"  [(ngModel)]="register.password_confirmation" name="password_confirmation"  autocomplete="on" required>
+                              </div>
+                          </div>
+
+                              <div class="form-group row">
+                                  <label for="username" class="col-md-4 col-form-label text-md-right">Nombre usuario</label>
+                                  <div class="col-md-6 mb-2">
+                                      <input type="text" id="username" class="form-control" [(ngModel)]="register.username" name="username">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefono</label>
+                                  <div class="col-md-6 mb-2">
+                                      <input type="text" id="phone_number" class="form-control" [(ngModel)]="register.phone" name="phone">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="address" class="col-md-4 col-form-label text-md-right">Direccion</label>
+                                  <div class="col-md-6 mb-2">
+                                      <input type="text" id="address" class="form-control" [(ngModel)]="register.address" name="address">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="suburb" class="col-md-4 col-form-label text-md-right">Colonia</label>
+                                  <div class="col-md-6 mb-2">
+                                      <input type="text" id="suburb" class="form-control" [(ngModel)]="register.suburb" name="suburb">
+                                  </div>
+                              </div>
+
+                                  <div class="col-md-6 offset-md-4">
+                                      <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">
+                                      Registrarse
+                                      </button>
+                                  </div>
+                          </form>
+                    </div>
+                </div>
+        </div>
